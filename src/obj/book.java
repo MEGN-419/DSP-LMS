@@ -1,6 +1,7 @@
 package obj;
 import handling.dataHandler;
 public class book {
+    //todo add book pricing , hhhhhhhhhhh.....
     int bookID;
     String title;
     String author;
