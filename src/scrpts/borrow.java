@@ -4,6 +4,11 @@ import obj.book;
 import obj.client;
 
 public class borrow {
+    //todo store borrow recs in data handler , same as storing books , different vals
+    //bb = borrowed book
+    //bc = borrowing client
+    //d = date
+    //r = return
     int borrowID;
     book bb;
     client bc;

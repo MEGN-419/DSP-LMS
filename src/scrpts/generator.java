@@ -7,11 +7,13 @@ import obj.client;
 import java.util.Random;
 
 public class generator {
+    //todo add borrowing report gen
     Random rand = new Random();
     dataHandler dataHandler ;
     public generator(dataHandler dataHandler){
         this.dataHandler=dataHandler;
     }
+    //keep book and client counts as static, or make it a normal int to use multiple instance of data handlers without interference , maybe like for updating while main sys is active ?
     public book bookGen(){
         return new book(1000+ dataHandler.bookCount,infoClass.bookTitles[rand.nextInt(infoClass.bookTitles.length)],
                 infoClass.humanNames[rand.nextInt(infoClass.humanNames.length)],infoClass.bookGenres[rand.nextInt(infoClass.bookGenres.length)],

@@ -19,6 +19,7 @@ public class book {
             System.out.println("created book with data :\nbookID : "+bookID+"\ntitle : "+title+"\n genre : "+genre+"\npublication year : "+pubYear);
         }
     }
+    //input option to either get or update, no need for multi methods, case-sensitive tho the use of switch
     public void updateInfo(String option , String data){
         switch(option){
             case "bookID":

@@ -1,6 +1,7 @@
 package scrpts;
 
 public interface infoClass {
+    //todo string to index conversion for genres , human names , and pub year , for index searching for gui
     String[] bookTitles = {
             "1984", "To Kill a Mockingbird", "The Great Gatsby", "Pride and Prejudice", "The Catcher in the Rye",
             "Animal Farm", "Lord of the Flies", "Jane Eyre", "Wuthering Heights", "Little Women",

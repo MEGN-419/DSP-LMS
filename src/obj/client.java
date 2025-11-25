@@ -9,6 +9,7 @@ public class client {
     final String name;
     String email;
     final int memDate;
+    //bbs = borrowed books
     ArrayList<book> bbs = new ArrayList<>();
     public client(int memberId , String name , String email , int memDate){
         this.memberId = memberId;
