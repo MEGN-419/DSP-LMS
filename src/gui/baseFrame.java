@@ -7,7 +7,7 @@ import javax.swing.*;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 public class baseFrame {
-    //for any one whos wondering , this is the actual window of the app
+    //for any one who's wondering , this is the actual window of the app
     //copied from other other project i did , to save more time
     //todo IGNORE , a lot of work leave till last , integrate it to the guihandler and datahandler , set the debug conditions
     private JFrame frame;

@@ -3,8 +3,8 @@ package gui;
 import javax.swing.*;
 
 public abstract class panelSuper {
-    //same stuff as baseframe
-    //and for anyone who is still wondering , this is the contents (graphics) that is shown on the base frame
+    //same stuff as base frame
+    //and for anyone still wondering, this is the contents (graphics) that is shown on the base frame
     private JPanel mainPanel;
     private int width;
     private int height;
