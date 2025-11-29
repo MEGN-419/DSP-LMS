@@ -1,6 +1,7 @@
 package handling;
 
 import obj.book;
+import scrpts.WL;
 import scrpts.ds.BTS;
 
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ public class dataHandler {
         }
         return false;
     }
+    //todo create ques on instance creation for all books
     public class storage{
         //aba = all books available, use if really needed, otherwise, all books created should be added here.
         ArrayList<book> aba = new ArrayList<>();
@@ -25,6 +27,8 @@ public class dataHandler {
         BTS bookT = new BTS();
         //store genres and pubyear in hashmaps, could use liked list but array lists r easier for us tho
         HashMap<String , ArrayList<book>> genres = new HashMap<>();
-        HashMap< Integer , ArrayList<book>> pubYear = new HashMap<>();
+        HashMap<Integer , ArrayList<book>> pubYear = new HashMap<>();
+        //qii = queues in instance
+        HashMap<book , WL> qii = new HashMap<>();
     }
 }

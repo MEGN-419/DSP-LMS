@@ -1,20 +1,21 @@
 package obj;
 import handling.dataHandler;
 public class book {
-    //todo add book pricing , hhhhhhhhhhh.....
     int bookID;
     String title;
     String author;
     String genre;
     int pubYear;
     boolean stat;
-    public book(int bookID, String title , String author , String genre , int pubYear){
+    int price ;
+    public book(int bookID, String title , String author , String genre , int pubYear , int price){
         this.bookID=bookID;
         this.title=title;
         this.author=author;
         this.genre=genre;
         this.pubYear=pubYear;
         stat = true;
+        this.price=price;
         dataHandler.bookCount++;
         if(dataHandler.debug){
             System.out.println("created book with data :\nbookID : "+bookID+"\ntitle : "+title+"\n genre : "+genre+"\npublication year : "+pubYear);
@@ -38,6 +39,8 @@ public class book {
             case"pubYear":
                 pubYear = Integer.parseInt(data);
             break;
+            case"price":
+                price= Integer.parseInt(data);
             default:
                 if(dataHandler.debug) System.out.println("wrong option entered");
             break;
@@ -50,6 +53,7 @@ public class book {
             case "author" -> author;
             case "genre" -> genre;
             case "pubYear" -> String.valueOf(pubYear);
+            case "price" -> String.valueOf(price);
             default -> {
                 if (dataHandler.debug) System.out.println("wrong option entered");
                 yield null;

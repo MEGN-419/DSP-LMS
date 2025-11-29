@@ -27,6 +27,7 @@ public class client {
     }
     public void addBook(book book){
         bbs.add(book);
+        cbill.addFine(book.price);
     }
     public ArrayList<book> veiwbbs(){
         return bbs;

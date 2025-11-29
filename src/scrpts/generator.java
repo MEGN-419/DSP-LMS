@@ -21,7 +21,7 @@ public class generator {
           if(!(dataHandler.idChecker(csi , ID))){
               return new book(ID,infoClass.bookTitles[rand.nextInt(infoClass.bookTitles.length)],
                       infoClass.humanNames[rand.nextInt(infoClass.humanNames.length)],infoClass.bookGenres[rand.nextInt(infoClass.bookGenres.length)],
-                      rand.nextInt(1970,2025));
+                      rand.nextInt(1970,2025), (rand.nextInt(15 , 60))*5);
           }
         }
          throw new RuntimeException("storage is full , no id slot is available , start a new storage instance");
