@@ -4,6 +4,7 @@ import handling.dataHandler;
 import obj.book;
 import obj.client;
 
+import java.text.ParseException;
 import java.util.Random;
 
 public class generator {
@@ -26,7 +27,7 @@ public class generator {
         }
          throw new RuntimeException("storage is full , no id slot is available , start a new storage instance");
     }
-    public client clientGen(){
+    public client clientGen() throws ParseException {
         return new client(1000+ handling.dataHandler.clientCount,
                 infoClass.humanNames[rand.nextInt(infoClass.humanNames.length)],
                 infoClass.humanNames[rand.nextInt(infoClass.humanNames.length)]+infoClass.humanNames[rand.nextInt(infoClass.humanNames.length)]+rand.nextInt(1,999)+"@gmail.com",

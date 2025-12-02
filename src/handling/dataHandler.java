@@ -4,7 +4,10 @@ import obj.book;
 import scrpts.WL;
 import scrpts.ds.BTS;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 public class dataHandler {
@@ -18,11 +21,14 @@ public class dataHandler {
         }
         return false;
     }
+    //dform = Date formater
+    public static Date Dform(int intDate) throws ParseException {
+        return new SimpleDateFormat("yy/MM/dd").parse(String.valueOf(intDate));
+    }
     //todo create ques on instance creation for all books
     public class storage{
         //aba = all books available, use if really needed, otherwise, all books created should be added here.
         ArrayList<book> aba = new ArrayList<>();
-
         //btree with book ids
         BTS bookT = new BTS();
         //store genres and pubyear in hashmaps, could use liked list but array lists r easier for us tho
