@@ -1,7 +1,5 @@
 package gui;
 
-import scripts.handler;
-
 import javax.swing.*;
 
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
@@ -42,19 +40,19 @@ public class baseFrame {
         frame.setResizable(false);
     }
     public JFrame getFrame() {
-        if (handler.debug){
+        if (guiHandler.debug){
             System.out.println("getting base frame(baseFrame)");
         }
         return frame;
     }
     public void setSize(int width,int height){
-        if (handler.debug){
+        if (guiHandler.debug){
             System.out.println("setting base frame size(baseFrame)");
         }
         frame.setSize(width,height);
     }
     public void swapPanel(JPanel panel){
-        if (handler.debug){
+        if (guiHandler.debug){
             System.out.println("swapping panel in base frame(baseFrame)");
         }
         frame.getContentPane().removeAll();

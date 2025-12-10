@@ -16,7 +16,7 @@ public class generator {
     }
     //keep book and client counts as static, or make it a normal int to use multiple instance of data handlers without interference , maybe like for updating while main sys is active ?
     public book bookGen(dataHandler.storage csi){
-        int ID= 0;
+        int ID;
          for (int i = 0 ; i < handling.dataHandler.bookCount ; i++){
           ID = rand.nextInt(10000 , 99999);
           if(!(dataHandler.idChecker(csi , ID))){
