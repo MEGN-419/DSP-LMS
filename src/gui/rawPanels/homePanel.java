@@ -63,10 +63,11 @@ public class homePanel extends panelSuper {
         JButton btnAddBook = new JButton("Add New Book");
         JButton btnReports = new JButton("Generate Reports");
         JButton btnQueues = new JButton("View Waiting Queues");
+        Dimension btnDimension = new Dimension(200, 50);
 
-        btnAddBook.setPreferredSize(new Dimension(200, 50));
-        btnReports.setPreferredSize(new Dimension(200, 50));
-        btnQueues.setPreferredSize(new Dimension(200, 50));
+        btnAddBook.setPreferredSize(btnDimension);
+        btnReports.setPreferredSize(btnDimension);
+        btnQueues.setPreferredSize(btnDimension);
 
         btnAddBook.addActionListener(e -> {
             String title = JOptionPane.showInputDialog("Book Title:");
@@ -95,7 +96,6 @@ public class homePanel extends panelSuper {
         return p;
     }
 
-    // --- CLIENT VIEW (The Fix is Here) ---
     private JPanel buildUserContent() {
         JPanel listPanel = new JPanel();
         listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.Y_AXIS));
@@ -136,7 +136,6 @@ public class homePanel extends panelSuper {
             listPanel.add(row);
         }
 
-        // FIX: Wrap the JScrollPane in a JPanel to match return type or use logic above
         JPanel wrapper = new JPanel(new BorderLayout());
         wrapper.add(new JScrollPane(listPanel), BorderLayout.CENTER);
         return wrapper;

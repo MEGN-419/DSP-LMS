@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class boot {
     public static void main(String[] args) {
-        System.out.println(">> DSP-LMS System Booting...");
+        System.out.println(">> System Booting...");
 
         dataHandler.init();
 

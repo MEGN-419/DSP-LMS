@@ -48,7 +48,6 @@ public class guiHandler {
         frame.swapPanel(new clientProfilePanel());
     }
 
-    // --- THIS WAS MISSING ---
     public static void loadClientManager() {
         frame.swapPanel(new adminClientManagerPanel());
     }

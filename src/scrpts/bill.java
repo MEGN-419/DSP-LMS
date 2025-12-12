@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class bill {
     public int memID;
     // t = total
-    public int tFines; // Changed to public so GUI can read it
+    public int tFines;
     public ArrayList<rec> payHis;
 
     public bill(int ID){

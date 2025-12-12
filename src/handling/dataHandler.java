@@ -26,7 +26,7 @@ public class dataHandler {
             storage.clients.add(new client(0, "Admin", "admin@aiu.edu", "admin123", "admin"));
             storage.clients.add(new client(1, "Student", "student@aiu.edu", "1234", "user"));
 
-            // 2. Generate 3 Random Books using your generator class
+            // 2. Generate 3 Random Books
             System.out.println(">> Generating 3 random books...");
             generator gen = new generator();
             gen.generateBooks(3);
