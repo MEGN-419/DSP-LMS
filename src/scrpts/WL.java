@@ -1,22 +1,41 @@
 package scrpts;
 
-import obj.book;
 import obj.client;
-
+import java.util.LinkedList;
 import java.util.Queue;
 
 public class WL {
-    Queue<client> memQ ;
-    //biq = book in queue;
-    book biq;
-    public WL(book book){
-        biq=book;
-    }
+    // Using LinkedList as Queue implementation
+    Queue<client> memQ = new LinkedList<>();
+
     public void addMemTQ(client client){
-        memQ.add(client);
+        // Prevent duplicates
+        if (!memQ.contains(client)) {
+            memQ.add(client);
+            System.out.println("Added " + client.name + " to waiting list.");
+        }
     }
+
     public client pollMemFQ(){
         return memQ.poll();
     }
-    //todo add meth to add clent to queue , and inform when book is in turn for said client
+
+    public boolean isEmpty() {
+        return memQ.isEmpty();
+    }
+
+    public String getQueueDetails() {
+        if (memQ.isEmpty()) return " (Empty)";
+        StringBuilder sb = new StringBuilder();
+        int i = 1;
+        for (client c : memQ) {
+            sb.append(String.format("   %d. %s (ID: %d)\n", i++, c.name, c.memberId));
+        }
+        return sb.toString();
+    }
+
+    // NEW METHOD: Checks if a specific client is already in this queue
+    public boolean contains(client c) {
+        return memQ.contains(c);
+    }
 }

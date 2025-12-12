@@ -1,11 +1,15 @@
 package scrpts.ds;
 
 import obj.book;
-import obj.client;
 
 public class node {
-    String type;
-    book book;
-    client client;
-    node left , right;
+    public book data;
+    public node left;
+    public node right;
+
+    public node(book data) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
 }

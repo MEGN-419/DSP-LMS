@@ -4,38 +4,29 @@ import handling.dataHandler;
 import obj.book;
 import obj.client;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-
 public class borrow {
-    //todo store borrow recs in data handler , same as storing books , different vals
-    //bb = borrowed book
-    //bc = borrowing client
-    //d = date
-    //r = return
-    int borrowID;
-    book bb;
-    client bc;
-    int borrowD;
-    int borrowR;
-    boolean stat;
-    public borrow(int borrowID ,book book , client client , int borrowD , int borrowR) throws ParseException {
-        this.borrowID=borrowID;
-        bb = book;
-        bc = client;
-        this.borrowD=borrowD;
-        this.borrowR=borrowR;
-        stat = false;
-        if(dataHandler.debug){
-            System.out.println("created a borrow request with info : \n request ID : "+borrowID+"date borrowed : "+dataHandler.Dform(borrowD)+"\nreturn date : "+dataHandler.Dform(borrowR)+
-                    "\nbook details : \nbook name"+book.getInfo("title")+"\nbook ID : "+book.getInfo("bookID")+
-                    "\nclient info : \nclient name : "+client.getInfo("name")+"\nclient ID : "+client.getInfo("id"));
+    public static String issueBook(client c, book b) {
+        if (b.stat) {
+            b.stat = false;
+            c.addBook(b);
+            return "Success: You borrowed " + b.title;
         }
+        return "Error: Book unavailable.";
     }
-    public void statR(){
-        stat = true;
-    }
-    public void renew(int newRD){
-        borrowR = newRD;
+
+    // Static method to handle returns and notifications
+    public static void processReturn(client c, book b) {
+        c.bbs.remove(b);
+        b.stat = true; // Book is available again
+
+        // Check Queue
+        if (!b.waitingList.isEmpty()) {
+            client nextClient = b.waitingList.pollMemFQ();
+            if (nextClient != null) {
+                String msg = "Good news! The book '" + b.title + "' is now available.";
+                nextClient.notifications.add(msg);
+                System.out.println(">> Notification sent to " + nextClient.name);
+            }
+        }
     }
 }

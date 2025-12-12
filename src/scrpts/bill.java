@@ -1,29 +1,32 @@
 package scrpts;
 
 import obj.book;
-
 import java.util.ArrayList;
 
 public class bill {
-    int memID;
-    //t = total
-    int tFines;
-    ArrayList<rec> payHis;
+    public int memID;
+    // t = total
+    public int tFines; // Changed to public so GUI can read it
+    public ArrayList<rec> payHis;
+
     public bill(int ID){
         memID = ID;
-        tFines=0;
+        tFines = 0;
+        payHis = new ArrayList<>();
     }
+
     public boolean getPayStat(){
         return tFines == 0;
     }
+
     public void addFine(int val){
-        tFines+=val;
+        tFines += val;
     }
 
     public class rec{
-        int date ;
-        int total;
-        ArrayList<book> books;
-        String des;
+        public int date;
+        public int total;
+        public ArrayList<book> books;
+        public String des;
     }
 }
