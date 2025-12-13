@@ -20,7 +20,7 @@ public class dataHandler {
         public static ArrayList<client> clients = new ArrayList<>();
     }
 
-    public static void init() {
+    public static void quickStart() {
         try {
             // 1. Add Admin & User
             storage.clients.add(new client(0, "Admin", "admin@aiu.edu", "admin123", "admin"));

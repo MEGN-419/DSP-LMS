@@ -9,7 +9,7 @@ public class boot {
     public static void main(String[] args) {
         System.out.println(">> System Booting...");
 
-        dataHandler.init();
+        dataHandler.quickStart();
 
         Scanner sc = new Scanner(System.in);
         generator gen = new generator();
